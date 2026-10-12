@@ -1,0 +1,53 @@
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+  :root {
+    color-scheme: dark !important;
+    --newtab-background-color: transparent !important;
+    --newtab-background-color-secondary: transparent !important;
+    --newtab-text-primary-color: #f4f7fb !important;
+    --newtab-text-secondary-color: #c8d2df !important;
+    background: transparent !important;
+  }
+
+  html,
+  body,
+  #root,
+  .outer-wrapper,
+  .main-section,
+  .body-wrapper,
+  main {
+    background: transparent !important;
+    background-image: none !important;
+  }
+
+
+  .wallpaper,
+  .wallpaper-container,
+  #wallpaper,
+  .wallpaper-preview {
+    background: transparent !important;
+    background-image: none !important;
+  }
+
+  .search-wrapper input,
+  .search-handoff-button,
+  .top-site-outer .tile,
+  .card-outer,
+  .weather-card {
+    background-color: color-mix(in srgb, #10263f 36%, transparent) !important;
+    border: 1px solid color-mix(in srgb, #a8792d 34%, transparent) !important;
+    border-radius: 12px !important;
+    color: #f4f7fb !important;
+  }
+
+  .personalize-button,
+  .open-customization-button,
+  .personalize-button:hover,
+  .open-customization-button:hover,
+  .personalize-button:active,
+  .open-customization-button:active,
+  .open-customization-button[aria-expanded="true"] {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+}

@@ -1,0 +1,162 @@
+:root {
+  color-scheme: dark !important;
+  --glass-ink: #10263f;
+  --glass-gold: #9c6b1f;
+  --glass-text: #f4f7fb;
+  --glass-muted: #c8d2df;
+
+  --lwt-accent-color: transparent !important;
+  --lwt-accent-color-inactive: transparent !important;
+  --lwt-text-color: var(--glass-text) !important;
+  --toolbar-bgcolor: transparent !important;
+  --toolbar-background-color: transparent !important;
+  --toolbox-background-color: transparent !important;
+  --tabpanel-background-color: transparent !important;
+  --chrome-block-background: transparent !important;
+
+  --toolbar-color: var(--glass-text) !important;
+  --toolbar-field-color: var(--glass-text) !important;
+  --toolbar-field-text-color: var(--glass-text) !important;
+  --toolbar-field-focus-color: #ffffff !important;
+  --toolbar-field-background-color: color-mix(in srgb, var(--glass-ink) 18%, transparent) !important;
+  --toolbar-field-focus-background-color: color-mix(in srgb, var(--glass-ink) 32%, transparent) !important;
+  --toolbar-field-border-color: color-mix(in srgb, var(--glass-gold) 42%, transparent) !important;
+}
+
+body {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+#main-window,
+#navigator-toolbox,
+#navigator-toolbox-background,
+.browser-toolbox-background,
+#titlebar,
+.browser-titlebar,
+#toolbar-menubar,
+#TabsToolbar,
+#TabsToolbar-customization-target,
+#nav-bar,
+#PersonalToolbar,
+#browser,
+.browserContainer,
+browser,
+#appcontent,
+#tabbrowser-tabbox,
+#tabbrowser-tabpanels,
+.browserStack {
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+#navigator-toolbox::before,
+#navigator-toolbox::after {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+#navigator-toolbox,
+#navigator-toolbox toolbar,
+#TabsToolbar,
+#nav-bar,
+#PersonalToolbar,
+#toolbar-menubar {
+  color: var(--glass-text) !important;
+}
+
+.tabbrowser-tab[selected] .tab-background,
+.tabbrowser-tab[visuallyselected] .tab-background {
+  background: color-mix(in srgb, var(--glass-ink) 34%, transparent) !important;
+  border: 1px solid color-mix(in srgb, var(--glass-gold) 72%, transparent) !important;
+  border-radius: 9px !important;
+  box-shadow: none !important;
+}
+
+.tabbrowser-tab:not([selected]):hover .tab-background {
+  background: color-mix(in srgb, var(--glass-ink) 20%, transparent) !important;
+  border-radius: 9px !important;
+}
+
+.tabbrowser-tab .tab-label {
+  color: var(--glass-text) !important;
+}
+
+#urlbar-background,
+#searchbar {
+  background: color-mix(in srgb, var(--glass-ink) 18%, transparent) !important;
+  border: 1px solid color-mix(in srgb, var(--glass-gold) 38%, transparent) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+
+#urlbar[focused="true"] #urlbar-background,
+#urlbar[open="true"] #urlbar-background {
+  background: color-mix(in srgb, var(--glass-ink) 34%, transparent) !important;
+  border-color: color-mix(in srgb, var(--glass-gold) 72%, transparent) !important;
+}
+
+#urlbar-input,
+#urlbar-scheme,
+#urlbar-input-container,
+#searchbar,
+#searchbar input {
+  color: var(--glass-text) !important;
+}
+
+#nav-bar toolbarbutton:hover,
+#TabsToolbar toolbarbutton:hover,
+#PersonalToolbar toolbarbutton:hover {
+  background-color: color-mix(in srgb, var(--glass-gold) 22%, transparent) !important;
+  border-radius: 8px !important;
+}
+
+menupopup,
+panel,
+.panel-arrowcontent,
+#appMenu-popup,
+#appMenu-popup .panel-arrowcontent,
+#appMenu-popup panelview,
+#appMenu-popup panelmultiview,
+#appMenu-mainView,
+#appMenu-popup .panel-viewstack,
+#appMenu-popup .panel-viewcontainer,
+#appMenu-popup .panel-subview-body,
+#appMenu-popup .panel-header,
+#appMenu-popup .panel-subview-footer,
+#urlbar[open="true"] .urlbarView,
+#urlbar[open="true"] .urlbarView-body-inner {
+  --glass-panel: transparent;
+  --panel-background: transparent !important;
+  --panel-background-color: transparent !important;
+  --arrowpanel-background: transparent !important;
+  --arrowpanel-border-color: transparent !important;
+  --panel-color: var(--glass-text) !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  color: var(--glass-text) !important;
+}
+
+#appMenu-popup,
+#appMenu-popup .panel-arrowcontent {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+menupopup menu,
+menupopup menuitem {
+  color: var(--glass-text) !important;
+}
+
+menupopup menu:hover,
+menupopup menuitem:hover,
+#appMenu-popup toolbarbutton:hover {
+  background-color: color-mix(in srgb, #a8792d 25%, transparent) !important;
+}
