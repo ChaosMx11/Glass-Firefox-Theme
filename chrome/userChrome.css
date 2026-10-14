@@ -150,13 +150,23 @@ panel,
   box-shadow: none !important;
 }
 
+menupopup {
+  --panel-background: #fff3 !important;
+  --panel-background-color: #fff3 !important;
+  --arrowpanel-background: #fff3 !important;
+}
+
 menupopup menu,
 menupopup menuitem {
-  color: var(--glass-text) !important;
+  color: #10263f !important;
 }
 
 menupopup menu:hover,
 menupopup menuitem:hover,
 #appMenu-popup toolbarbutton:hover {
   background-color: color-mix(in srgb, #a8792d 25%, transparent) !important;
+}
+
+.menupopup-arrowscrollbox {
+  background: #fff3 !important;
 }

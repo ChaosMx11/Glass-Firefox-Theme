@@ -5,6 +5,7 @@
     --newtab-background-color-secondary: transparent !important;
     --newtab-text-primary-color: #f4f7fb !important;
     --newtab-text-secondary-color: #c8d2df !important;
+    --semi-transparent: #fff3 !important;
     background: transparent !important;
   }
 
@@ -50,4 +51,10 @@
     border-color: transparent !important;
     box-shadow: none !important;
   }
+
+  .open-customization-button {
+    --button-background-color-primary: #fff3 !important;
+    --button-background-color-primary-hover: #fff3 !important;
+  }
+
 }
