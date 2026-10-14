@@ -154,11 +154,13 @@ menupopup {
   --panel-background: #fff3 !important;
   --panel-background-color: #fff3 !important;
   --arrowpanel-background: #fff3 !important;
+  --panel-border-color: #10263f !important;
 }
 
 menupopup menu,
 menupopup menuitem {
   color: #10263f !important;
+  font-weight: bold !important;
 }
 
 menupopup menu:hover,
