@@ -7,6 +7,14 @@
     --newtab-text-secondary-color: #c8d2df !important;
     --semi-transparent: #fff3 !important;
     background: transparent !important;
+
+    --glass-ink: #10263f;
+    --glass-gold: #9c6b1f;
+    --glass-text: #f4f7fb;
+    --glass-muted: #c8d2df;
+    --glass-popup-bg: color-mix(in srgb, #10263f 42%, transparent);
+    --glass-popup-border: color-mix(in srgb, #9c6b1f 48%, transparent);
+    --glass-popup-hover: color-mix(in srgb, #9c6b1f 30%, transparent);
   }
 
   html,
@@ -19,7 +27,6 @@
     background: transparent !important;
     background-image: none !important;
   }
-
 
   .wallpaper,
   .wallpaper-container,
@@ -57,4 +64,113 @@
     --button-background-color-primary-hover: #fff3 !important;
   }
 
+  .search-wrapper content-search-handoff-ui {
+    --border-radius-medium: 10px !important;
+    --newtab-background-color-secondary: var(--glass-popup-bg) !important;
+    --newtab-text-primary-color: var(--glass-text) !important;
+    --newtab-text-secondary-color: var(--glass-muted) !important;
+    --newtab-border-color: var(--glass-popup-border) !important;
+    --newtab-element-hover-color: var(--glass-popup-hover) !important;
+    --newtab-element-active-color: color-mix(in srgb, #9c6b1f 38%, transparent) !important;
+    --newtab-primary-action-background: color-mix(in srgb, #9c6b1f 72%, transparent) !important;
+    --newtab-textbox-focus-color: color-mix(in srgb, #9c6b1f 72%, transparent) !important;
+    --newtab-textbox-focus-boxshadow: 0 0 0 1px color-mix(in srgb, #9c6b1f 72%, transparent), 0 0 0 3px color-mix(in srgb, #9c6b1f 20%, transparent) !important;
+  }
+
+  .search-wrapper .search-inner-wrapper {
+    border-radius: 10px !important;
+  }
+
+  .search-wrapper input,
+  .search-wrapper .search-handoff-button {
+    background-color: var(--glass-popup-bg) !important;
+    border: 1px solid var(--glass-popup-border) !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    color: var(--glass-text) !important;
+    font-weight: 700 !important;
+    outline: none !important;
+  }
+
+  .search-wrapper input:focus,
+  .search-wrapper .search-inner-wrapper:active input,
+  .search-wrapper .search-handoff-button:focus,
+  .search-wrapper .search-handoff-button:hover,
+  .search-wrapper.fake-focus .search-handoff-button {
+    background-color: color-mix(in srgb, #10263f 50%, transparent) !important;
+    border-color: color-mix(in srgb, #9c6b1f 72%, transparent) !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .search-wrapper input::placeholder,
+  .search-wrapper .fake-textbox {
+    color: var(--glass-muted) !important;
+    font-weight: 700 !important;
+  }
+
+  .contentSearchSuggestionTable {
+    color: var(--glass-text) !important;
+    background: var(--glass-popup-bg) !important;
+    background-color: var(--glass-popup-bg) !important;
+    border: 1px solid var(--glass-popup-border) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 6px 16px #0004 !important;
+    overflow: hidden !important;
+  }
+
+  .contentSearchSuggestionTable .contentSearchHeader,
+  .contentSearchSuggestionTable .contentSearchOneOffsTable,
+  .contentSearchSuggestionTable .contentSearchSuggestionsList {
+    color: var(--glass-text) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border-color: var(--glass-popup-border) !important;
+    font-weight: 700 !important;
+  }
+
+  .contentSearchSuggestionTable .contentSearchHeader {
+    background-color: color-mix(in srgb, #10263f 52%, transparent) !important;
+  }
+
+  .contentSearchSuggestionTable .contentSearchSuggestionRow,
+  .contentSearchSuggestionTable .contentSearchSearchWithHeaderSearchText,
+  .contentSearchSuggestionTable .contentSearchSettingsButton,
+  .contentSearchSuggestionTable .contentSearchOneOffItem {
+    color: var(--glass-text) !important;
+    font-weight: 700 !important;
+  }
+
+  .contentSearchSuggestionTable .contentSearchSuggestionRow.selected,
+  .contentSearchSuggestionTable .contentSearchSuggestionRow:hover,
+  .contentSearchSuggestionTable .contentSearchOneOffItem.selected,
+  .contentSearchSuggestionTable .contentSearchOneOffItem:hover,
+  .contentSearchSuggestionTable .contentSearchSettingsButton:hover {
+    background: var(--glass-popup-hover) !important;
+    background-color: var(--glass-popup-hover) !important;
+    color: #ffffff !important;
+  }
+
+  .logo,
+  .top-site-outer .tile .top-site-icon,
+  .top-site-outer .tile .rich-icon,
+  .top-site-outer .tile .default-icon,
+  .top-site-outer .tile .search-topsite,
+  .top-site-outer .tile .icon-wrapper img,
+  .top-site-outer .tile .icon img {
+    filter: grayscale(1) opacity(50%) !important;
+  }
+
+  .top-site-outer .tile .icon-wrapper.letterfallback,
+  .top-site-outer .tile .icon-wrapper.letter-fallback {
+    background-color: #fff3 !important;
+    filter: grayscale(1) opacity(50%) !important;
+  }
+
+  .top-site-outer .tile .icon-wrapper.letterfallback::before,
+  .top-site-outer .tile .icon-wrapper.letter-fallback::before,
+  .top-site-outer .tile .default-icon[data-fallback]::before,
+  .top-site-outer .tile .search-topsite[data-fallback]::before {
+    filter: grayscale(1) !important;
+  }
 }

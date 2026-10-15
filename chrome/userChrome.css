@@ -94,9 +94,12 @@ browser,
 }
 
 #urlbar[focused="true"] #urlbar-background,
-#urlbar[open="true"] #urlbar-background {
-  background: color-mix(in srgb, var(--glass-ink) 34%, transparent) !important;
-  border-color: color-mix(in srgb, var(--glass-gold) 72%, transparent) !important;
+#urlbar[open] #urlbar-background,
+#urlbar[popover-open] #urlbar-background {
+  background: color-mix(in srgb, #10263f 18%, transparent) !important;
+  background-color: color-mix(in srgb, #10263f 18%, transparent) !important;
+  border-color: color-mix(in srgb, #9c6b1f 72%, transparent) !important;
+  box-shadow: none !important;
 }
 
 #urlbar-input,
@@ -114,61 +117,783 @@ browser,
   border-radius: 8px !important;
 }
 
+:root {
+
+  --glass-popup-bg: color-mix(in srgb, var(--glass-ink) 42%, transparent);
+  --glass-popup-border: color-mix(in srgb, var(--glass-gold) 48%, transparent);
+  --glass-popup-hover: color-mix(in srgb, var(--glass-gold) 30%, transparent);
+  --glass-popup-radius: 10px;
+
+  --panel-background: var(--glass-popup-bg) !important;
+  --panel-background-color: var(--glass-popup-bg) !important;
+  --panel-color: var(--glass-text) !important;
+  --panel-border-color: var(--glass-popup-border) !important;
+  --panel-border-radius: var(--glass-popup-radius) !important;
+
+  --arrowpanel-background: var(--glass-popup-bg) !important;
+  --arrowpanel-color: var(--glass-text) !important;
+  --arrowpanel-border-color: var(--glass-popup-border) !important;
+  --arrowpanel-border-radius: var(--glass-popup-radius) !important;
+
+  --menu-background-color: var(--glass-popup-bg) !important;
+  --menu-color: var(--glass-text) !important;
+  --menu-border-color: var(--glass-popup-border) !important;
+  --menuitem-hover-background-color: var(--glass-popup-hover) !important;
+}
+
 menupopup,
+popup,
+#tabContextMenu,
+#contentAreaContextMenu,
+#toolbar-context-menu,
+#tabstrip-context-menu,
+#downloadsContextMenu,
+#placesContext,
+#bookmarksMenuPopup,
+#BMB_bookmarksPopup,
+#historyMenuPopup,
+#allTabsMenu {
+  color: var(--glass-text) !important;
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+menupopup>.menupopup-arrowscrollbox,
+.menupopup-arrowscrollbox,
+menulist>menupopup>.menupopup-arrowscrollbox {
+  color: var(--glass-text) !important;
+  background: var(--glass-popup-bg) !important;
+  background-image: none !important;
+  border: 1px solid var(--glass-popup-border) !important;
+  border-radius: var(--glass-popup-radius) !important;
+  box-shadow: 0 6px 16px #0004 !important;
+}
+
+.menupopup-arrowscrollbox>scrollbox,
+.menupopup-arrowscrollbox scrollbox,
+menupopup>.menupopup-arrowscrollbox>scrollbox {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+menupopup menu,
+menupopup menuitem,
+menupopup menucaption,
+menupopup .menu-text,
+menupopup .menu-iconic-text,
+menupopup .menu-accel-container,
+menupopup .menu-iconic-left,
+menupopup .menu-right,
+popup menu,
+popup menuitem,
+#tabContextMenu menu,
+#tabContextMenu menuitem,
+#contentAreaContextMenu menu,
+#contentAreaContextMenu menuitem {
+  color: var(--glass-text) !important;
+  font-weight: 500 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+
+menupopup menu[_moz-menuactive="true"],
+menupopup menuitem[_moz-menuactive="true"],
+menupopup menu:hover,
+menupopup menuitem:hover,
+menulist>menupopup menuitem[_moz-menuactive="true"],
+popup menu[_moz-menuactive="true"],
+popup menuitem[_moz-menuactive="true"],
+#tabContextMenu menu[_moz-menuactive="true"],
+#tabContextMenu menuitem[_moz-menuactive="true"],
+#contentAreaContextMenu menu[_moz-menuactive="true"],
+#contentAreaContextMenu menuitem[_moz-menuactive="true"] {
+  background: var(--glass-popup-hover) !important;
+  color: #ffffff !important;
+}
+
+menupopup menu[disabled="true"],
+menupopup menuitem[disabled="true"],
+popup menu[disabled="true"],
+popup menuitem[disabled="true"] {
+  color: var(--glass-muted) !important;
+  opacity: 0.68 !important;
+}
+
+menupopup menuseparator,
+popup menuseparator {
+  border: 0 !important;
+  border-top: 1px solid color-mix(in srgb, var(--glass-gold) 20%, transparent) !important;
+  opacity: 0.8 !important;
+}
+
 panel,
-.panel-arrowcontent,
 #appMenu-popup,
+#widget-overflow,
+#unified-extensions-panel,
+#downloadsPanel,
+#downloadsPanel-mainView,
+#editBookmarkPanel,
+#identity-popup,
+#protections-popup,
+#permission-popup,
+#notification-popup {
+  --panel-background: var(--glass-popup-bg) !important;
+  --panel-background-color: var(--glass-popup-bg) !important;
+  --panel-color: var(--glass-text) !important;
+  --panel-border-color: var(--glass-popup-border) !important;
+  --arrowpanel-background: var(--glass-popup-bg) !important;
+  --arrowpanel-color: var(--glass-text) !important;
+  --arrowpanel-border-color: var(--glass-popup-border) !important;
+  color: var(--glass-text) !important;
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.panel-arrowcontent,
+panel .panel-arrowcontent,
 #appMenu-popup .panel-arrowcontent,
+#widget-overflow .panel-arrowcontent,
+#unified-extensions-panel .panel-arrowcontent,
+#downloadsPanel .panel-arrowcontent,
+#editBookmarkPanel .panel-arrowcontent,
+#identity-popup .panel-arrowcontent,
+#protections-popup .panel-arrowcontent,
+#permission-popup .panel-arrowcontent,
+#notification-popup .panel-arrowcontent,
+#tab-preview-panel .panel-arrowcontent {
+  color: var(--glass-text) !important;
+  background: var(--glass-popup-bg) !important;
+  background-image: none !important;
+  border: 1px solid var(--glass-popup-border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 16px #0004 !important;
+}
+
+panelview,
+panelmultiview,
+.panel-viewstack,
+.panel-viewcontainer,
+.panel-subview-body,
+.panel-header,
+.panel-subview-footer,
+.panel-footer,
+.panel-body,
+.panel-list,
 #appMenu-popup panelview,
 #appMenu-popup panelmultiview,
-#appMenu-mainView,
 #appMenu-popup .panel-viewstack,
 #appMenu-popup .panel-viewcontainer,
 #appMenu-popup .panel-subview-body,
 #appMenu-popup .panel-header,
 #appMenu-popup .panel-subview-footer,
-#urlbar[open="true"] .urlbarView,
-#urlbar[open="true"] .urlbarView-body-inner {
-  --glass-panel: transparent;
-  --panel-background: transparent !important;
-  --panel-background-color: transparent !important;
-  --arrowpanel-background: transparent !important;
-  --arrowpanel-border-color: transparent !important;
-  --panel-color: var(--glass-text) !important;
-  -moz-appearance: none !important;
-  appearance: none !important;
+#downloadsPanel-mainView {
   background: transparent !important;
-  border-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
   box-shadow: none !important;
+}
+
+panel label,
+panel description,
+panel .toolbarbutton-text,
+panel .panel-header,
+panel .panel-subview-footer,
+panel .identity-popup-expander,
+panel .protections-popup-category-label,
+panel .notification-button-label,
+#tab-preview-panel .tab-preview-title,
+#tab-preview-panel .tab-preview-uri,
+#tab-preview-panel .tab-preview-pid {
   color: var(--glass-text) !important;
 }
 
-#appMenu-popup,
-#appMenu-popup .panel-arrowcontent {
+panel toolbarbutton:hover,
+panel button:hover,
+panel .subviewbutton:hover,
+panel .panel-button:hover,
+#appMenu-popup toolbarbutton:hover,
+#widget-overflow toolbarbutton:hover,
+#unified-extensions-panel toolbarbutton:hover,
+#downloadsPanel toolbarbutton:hover {
+  background-color: var(--glass-popup-hover) !important;
   border: 0 !important;
-  outline: 0 !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+}
+
+#urlbar[open] .urlbarView {
+  color: var(--glass-text) !important;
+  background: var(--glass-popup-bg) !important;
+  background-image: none !important;
+  border: 1px solid var(--glass-popup-border) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 6px 16px #0004 !important;
+}
+
+#urlbar[open] .urlbarView-body-inner,
+#urlbar[open] .urlbarView-results,
+#urlbar[open] .urlbarView-results-container,
+#urlbar[open] .urlbarView-row {
+  color: var(--glass-text) !important;
+  background: transparent !important;
+  border: 0 !important;
   box-shadow: none !important;
 }
 
-menupopup {
-  --panel-background: #fff3 !important;
-  --panel-background-color: #fff3 !important;
-  --arrowpanel-background: #fff3 !important;
-  --panel-border-color: #10263f !important;
+#urlbar[open] .urlbarView-title,
+#urlbar[open] .urlbarView-url,
+#urlbar[open] .urlbarView-action,
+#urlbar[open] .urlbarView-favicon {
+  color: var(--glass-text) !important;
+}
+
+#urlbar[open] .urlbarView-row:hover,
+#urlbar[open] .urlbarView-row[selected],
+#urlbar[open] .urlbarView-row[aria-selected="true"] {
+  background: var(--glass-popup-hover) !important;
+  border: 0 !important;
+  border-radius: 6px !important;
+}
+
+#tab-preview-panel {
+  --panel-background: var(--glass-popup-bg) !important;
+  --panel-background-color: var(--glass-popup-bg) !important;
+  --panel-color: var(--glass-text) !important;
+  --panel-border-color: var(--glass-popup-border) !important;
+  color: var(--glass-text) !important;
+  background: transparent !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#tab-preview-panel .tab-preview-content-main,
+#tab-preview-panel .tab-preview-text-container {
+  color: var(--glass-text) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+tooltip {
+  color: var(--glass-text) !important;
+  background: var(--glass-popup-bg) !important;
+  background-image: none !important;
+  border: 1px solid var(--glass-popup-border) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 6px 16px #0004 !important;
+}
+
+menupopup,
+menupopup *,
+popup,
+popup *,
+panel,
+panel *,
+tooltip,
+tooltip *,
+#urlbar[open] .urlbarView,
+#urlbar[open] .urlbarView *,
+#tab-preview-panel,
+#tab-preview-panel * {
+  font-weight: 700 !important;
+}
+
+menupopup#contentAreaContextMenu,
+menupopup#tabContextMenu,
+menupopup#toolbar-context-menu,
+menupopup#tabstrip-context-menu,
+menupopup#downloadsContextMenu,
+menupopup#placesContext,
+menupopup#bookmarksMenuPopup,
+menupopup#BMB_bookmarksPopup,
+menupopup#historyMenuPopup,
+menupopup#allTabsMenu,
+menupopup#sidebar-context-menu,
+menupopup#unified-extensions-context-menu {
+  --panel-background: var(--glass-popup-bg) !important;
+  --panel-background-color: var(--glass-popup-bg) !important;
+  --panel-color: var(--glass-text) !important;
+  --panel-border-color: var(--glass-popup-border) !important;
+  --arrowpanel-background: var(--glass-popup-bg) !important;
+  --arrowpanel-color: var(--glass-text) !important;
+  --arrowpanel-border-color: var(--glass-popup-border) !important;
+  color: var(--glass-text) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+menupopup#contentAreaContextMenu>.menupopup-arrowscrollbox,
+menupopup#tabContextMenu>.menupopup-arrowscrollbox,
+menupopup#toolbar-context-menu>.menupopup-arrowscrollbox,
+menupopup#tabstrip-context-menu>.menupopup-arrowscrollbox,
+menupopup#downloadsContextMenu>.menupopup-arrowscrollbox,
+menupopup#placesContext>.menupopup-arrowscrollbox,
+menupopup#bookmarksMenuPopup>.menupopup-arrowscrollbox,
+menupopup#BMB_bookmarksPopup>.menupopup-arrowscrollbox,
+menupopup#historyMenuPopup>.menupopup-arrowscrollbox,
+menupopup#allTabsMenu>.menupopup-arrowscrollbox,
+menupopup#sidebar-context-menu>.menupopup-arrowscrollbox,
+menupopup#unified-extensions-context-menu>.menupopup-arrowscrollbox {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+menupopup#contentAreaContextMenu .arrowscrollbox-scrollbox,
+menupopup#tabContextMenu .arrowscrollbox-scrollbox,
+menupopup#toolbar-context-menu .arrowscrollbox-scrollbox,
+menupopup#tabstrip-context-menu .arrowscrollbox-scrollbox,
+menupopup#downloadsContextMenu .arrowscrollbox-scrollbox,
+menupopup#placesContext .arrowscrollbox-scrollbox,
+menupopup#bookmarksMenuPopup .arrowscrollbox-scrollbox,
+menupopup#BMB_bookmarksPopup .arrowscrollbox-scrollbox,
+menupopup#historyMenuPopup .arrowscrollbox-scrollbox,
+menupopup#allTabsMenu .arrowscrollbox-scrollbox,
+menupopup#sidebar-context-menu .arrowscrollbox-scrollbox,
+menupopup#unified-extensions-context-menu .arrowscrollbox-scrollbox {
+  -moz-appearance: none !important;
+  appearance: none !important;
+  color: var(--glass-text) !important;
+  background: var(--glass-popup-bg) !important;
+  background-color: var(--glass-popup-bg) !important;
+  background-image: none !important;
+  border: 1px solid var(--glass-popup-border) !important;
+  border-radius: var(--glass-popup-radius) !important;
+  box-shadow: 0 6px 16px #0004 !important;
+}
+
+#contentAreaContextMenu menu,
+#contentAreaContextMenu menuitem,
+#contentAreaContextMenu menucaption,
+#contentAreaContextMenu .menu-text,
+#contentAreaContextMenu .menu-iconic-text,
+#contentAreaContextMenu .menu-accel-container,
+#tabContextMenu menu,
+#tabContextMenu menuitem,
+#tabContextMenu menucaption,
+#tabContextMenu .menu-text,
+#tabContextMenu .menu-iconic-text,
+#tabContextMenu .menu-accel-container,
+#toolbar-context-menu menu,
+#toolbar-context-menu menuitem,
+#tabstrip-context-menu menu,
+#tabstrip-context-menu menuitem,
+#downloadsContextMenu menu,
+#downloadsContextMenu menuitem,
+#placesContext menu,
+#placesContext menuitem,
+#bookmarksMenuPopup menu,
+#bookmarksMenuPopup menuitem,
+#BMB_bookmarksPopup menu,
+#BMB_bookmarksPopup menuitem,
+#historyMenuPopup menu,
+#historyMenuPopup menuitem,
+#allTabsMenu menu,
+#allTabsMenu menuitem,
+#sidebar-context-menu menu,
+#sidebar-context-menu menuitem,
+#unified-extensions-context-menu menu,
+#unified-extensions-context-menu menuitem {
+  color: var(--glass-text) !important;
+  font-weight: 700 !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+#contentAreaContextMenu menu[_moz-menuactive="true"],
+#contentAreaContextMenu menuitem[_moz-menuactive="true"],
+#contentAreaContextMenu menu:hover,
+#contentAreaContextMenu menuitem:hover,
+#tabContextMenu menu[_moz-menuactive="true"],
+#tabContextMenu menuitem[_moz-menuactive="true"],
+#tabContextMenu menu:hover,
+#tabContextMenu menuitem:hover,
+#toolbar-context-menu menu[_moz-menuactive="true"],
+#toolbar-context-menu menuitem[_moz-menuactive="true"],
+#toolbar-context-menu menu:hover,
+#toolbar-context-menu menuitem:hover,
+#tabstrip-context-menu menu[_moz-menuactive="true"],
+#tabstrip-context-menu menuitem[_moz-menuactive="true"],
+#tabstrip-context-menu menu:hover,
+#tabstrip-context-menu menuitem:hover,
+#downloadsContextMenu menu[_moz-menuactive="true"],
+#downloadsContextMenu menuitem[_moz-menuactive="true"],
+#downloadsContextMenu menu:hover,
+#downloadsContextMenu menuitem:hover,
+#placesContext menu[_moz-menuactive="true"],
+#placesContext menuitem[_moz-menuactive="true"],
+#placesContext menu:hover,
+#placesContext menuitem:hover,
+#bookmarksMenuPopup menu[_moz-menuactive="true"],
+#bookmarksMenuPopup menuitem[_moz-menuactive="true"],
+#bookmarksMenuPopup menu:hover,
+#bookmarksMenuPopup menuitem:hover,
+#BMB_bookmarksPopup menu[_moz-menuactive="true"],
+#BMB_bookmarksPopup menuitem[_moz-menuactive="true"],
+#BMB_bookmarksPopup menu:hover,
+#BMB_bookmarksPopup menuitem:hover,
+#historyMenuPopup menu[_moz-menuactive="true"],
+#historyMenuPopup menuitem[_moz-menuactive="true"],
+#historyMenuPopup menu:hover,
+#historyMenuPopup menuitem:hover,
+#allTabsMenu menu[_moz-menuactive="true"],
+#allTabsMenu menuitem[_moz-menuactive="true"],
+#allTabsMenu menu:hover,
+#allTabsMenu menuitem:hover,
+#sidebar-context-menu menu[_moz-menuactive="true"],
+#sidebar-context-menu menuitem[_moz-menuactive="true"],
+#sidebar-context-menu menu:hover,
+#sidebar-context-menu menuitem:hover,
+#unified-extensions-context-menu menu[_moz-menuactive="true"],
+#unified-extensions-context-menu menuitem[_moz-menuactive="true"],
+#unified-extensions-context-menu menu:hover,
+#unified-extensions-context-menu menuitem:hover {
+  background: var(--glass-popup-hover) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border-radius: 6px !important;
+}
+
+menupopup>.menupopup-arrowscrollbox,
+menupopup .menupopup-arrowscrollbox {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+menupopup .arrowscrollbox-scrollbox {
+  -moz-appearance: none !important;
+  appearance: none !important;
+  color: var(--glass-text) !important;
+  background: var(--glass-popup-bg) !important;
+  background-color: var(--glass-popup-bg) !important;
+  background-image: none !important;
+  border: 1px solid var(--glass-popup-border) !important;
+  border-radius: var(--glass-popup-radius) !important;
+  box-shadow: 0 6px 16px #0004 !important;
 }
 
 menupopup menu,
-menupopup menuitem {
-  color: #10263f !important;
-  font-weight: bold !important;
+menupopup menuitem,
+menupopup menucaption,
+menupopup .menu-text,
+menupopup .menu-iconic-text,
+menupopup .menu-accel-container,
+menupopup .menu-iconic-left,
+menupopup .menu-right {
+  color: var(--glass-text) !important;
+  font-weight: 700 !important;
 }
 
+menupopup menu[_moz-menuactive="true"],
+menupopup menuitem[_moz-menuactive="true"],
 menupopup menu:hover,
-menupopup menuitem:hover,
-#appMenu-popup toolbarbutton:hover {
-  background-color: color-mix(in srgb, #a8792d 25%, transparent) !important;
+menupopup menuitem:hover {
+  background: var(--glass-popup-hover) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border-radius: 6px !important;
 }
 
-.menupopup-arrowscrollbox {
-  background: #fff3 !important;
+#urlbar[open] .urlbarView {
+  --panel-background: var(--glass-popup-bg) !important;
+  --panel-background-color: var(--glass-popup-bg) !important;
+  --arrowpanel-background: var(--glass-popup-bg) !important;
+  --panel-color: var(--glass-text) !important;
+  --arrowpanel-color: var(--glass-text) !important;
+  --panel-border-color: var(--glass-popup-border) !important;
+  --arrowpanel-border-color: var(--glass-popup-border) !important;
+  color: var(--glass-text) !important;
+  background: var(--glass-popup-bg) !important;
+  background-color: var(--glass-popup-bg) !important;
+  background-image: none !important;
+  border: 1px solid var(--glass-popup-border) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 6px 16px #0004 !important;
+  overflow: hidden !important;
+}
+
+#urlbar[open] .urlbarView-body-inner,
+#urlbar[open] .urlbarView-results,
+#urlbar[open] .urlbarView-results-container,
+#urlbar[open] .urlbarView-row-inner,
+#urlbar[open] .urlbarView-no-wrap,
+#urlbar[open] .urlbarView-favicon {
+  color: var(--glass-text) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+#urlbar[open] .urlbarView-title,
+#urlbar[open] .urlbarView-url,
+#urlbar[open] .urlbarView-action,
+#urlbar[open] .urlbarView-tags,
+#urlbar[open] .urlbarView-dim,
+#urlbar[open] .urlbarView-row {
+  color: var(--glass-text) !important;
+  font-weight: 700 !important;
+}
+
+#urlbar[open] .urlbarView-row:hover,
+#urlbar[open] .urlbarView-row[selected],
+#urlbar[open] .urlbarView-row[aria-selected="true"] {
+  background: var(--glass-popup-hover) !important;
+  background-color: var(--glass-popup-hover) !important;
+  border: 0 !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+}
+
+#urlbar[open] .urlbarView-row:hover .urlbarView-title,
+#urlbar[open] .urlbarView-row[selected] .urlbarView-title,
+#urlbar[open] .urlbarView-row[aria-selected="true"] .urlbarView-title,
+#urlbar[open] .urlbarView-row:hover .urlbarView-url,
+#urlbar[open] .urlbarView-row[selected] .urlbarView-url,
+#urlbar[open] .urlbarView-row[aria-selected="true"] .urlbarView-url {
+  color: #ffffff !important;
+}
+
+#urlbar[open] .search-one-offs,
+#urlbar[open] .search-panel-one-offs-container,
+#urlbar[open] .searchbar-engine-one-off-item {
+  color: var(--glass-text) !important;
+  background: transparent !important;
+  border-color: color-mix(in srgb, var(--glass-gold) 28%, transparent) !important;
+  font-weight: 700 !important;
+}
+
+#urlbar[open] .searchbar-engine-one-off-item:hover,
+#urlbar[open] .searchbar-engine-one-off-item[aria-selected="true"] {
+  background: var(--glass-popup-hover) !important;
+  color: #ffffff !important;
+  border-radius: 6px !important;
+}
+
+#urlbar[open]>.urlbarView,
+#urlbar[open] .urlbarView,
+.urlbarView:not(.megabar) {
+  --panel-background: var(--glass-popup-bg) !important;
+  --panel-background-color: var(--glass-popup-bg) !important;
+  --arrowpanel-background: var(--glass-popup-bg) !important;
+  --panel-color: var(--glass-text) !important;
+  --arrowpanel-color: var(--glass-text) !important;
+  --panel-border-color: var(--glass-popup-border) !important;
+  --arrowpanel-border-color: var(--glass-popup-border) !important;
+  color: var(--glass-text) !important;
+  background: var(--glass-popup-bg) !important;
+  background-color: var(--glass-popup-bg) !important;
+  background-image: none !important;
+}
+
+#urlbar[open]>.urlbarView {
+  border: 1px solid var(--glass-popup-border) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 6px 16px #0004 !important;
+  overflow: hidden !important;
+}
+
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"],
+#urlbar-results,
+#urlbarView-results,
+#urlbar[open] .urlbarView-body-outer,
+#urlbar[open] .urlbarView-body-inner,
+#urlbar[open] .urlbarView-results,
+#urlbar[open] .urlbarView-results-container,
+#urlbar[open] .urlbarView-row,
+#urlbar[open] .urlbarView-row-inner,
+#urlbar[open] .urlbarView-no-wrap,
+#urlbar[open] .search-one-offs,
+#urlbar[open] .search-panel-one-offs-container {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+#urlbar[open] .urlbarView-row:is(:hover, [selected], [aria-selected="true"]),
+#urlbar[open] .urlbarView-row:is(:hover, [selected], [aria-selected="true"])>.urlbarView-row-inner {
+  background: var(--glass-popup-hover) !important;
+  background-color: var(--glass-popup-hover) !important;
+  border: 0 !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+}
+
+#urlbar[open] .urlbarView-row,
+#urlbar[open] .urlbarView-row-inner,
+#urlbar[open] .urlbarView-title,
+#urlbar[open] .urlbarView-url,
+#urlbar[open] .urlbarView-action,
+#urlbar[open] .urlbarView-tags,
+#urlbar[open] .urlbarView-dim {
+  color: var(--glass-text) !important;
+  font-weight: 700 !important;
+}
+
+#urlbar[open] .urlbarView-row:is(:hover, [selected], [aria-selected="true"]) .urlbarView-title,
+#urlbar[open] .urlbarView-row:is(:hover, [selected], [aria-selected="true"]) .urlbarView-url,
+#urlbar[open] .urlbarView-row:is(:hover, [selected], [aria-selected="true"]) .urlbarView-action {
+  color: #ffffff !important;
+}
+
+#urlbar-results,
+#urlbarView-results,
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] {
+  --panel-background: transparent !important;
+  --panel-background-color: transparent !important;
+  --arrowpanel-background: transparent !important;
+  --panel-border-color: transparent !important;
+  --arrowpanel-border-color: transparent !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+#urlbar-results .urlbarView,
+#urlbarView-results .urlbarView,
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .urlbarView,
+.urlbarView:not(.megabar),
+#urlbar[open] .urlbarView {
+  --panel-background: rgba(16, 38, 63, 0.42) !important;
+  --panel-background-color: rgba(16, 38, 63, 0.42) !important;
+  --arrowpanel-background: rgba(16, 38, 63, 0.42) !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  color: var(--glass-text) !important;
+  background: rgba(16, 38, 63, 0.42) !important;
+  background-color: rgba(16, 38, 63, 0.42) !important;
+  background-image: none !important;
+  border: 1px solid var(--glass-popup-border) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 6px 16px #0004 !important;
+  backdrop-filter: blur(10px) saturate(115%) !important;
+  overflow: hidden !important;
+}
+
+#urlbar-results .urlbarView-body-outer,
+#urlbar-results .urlbarView-body-inner,
+#urlbar-results .urlbarView-results,
+#urlbar-results .urlbarView-results-container,
+#urlbar-results .urlbarView-row,
+#urlbar-results .urlbarView-row-inner,
+#urlbarView-results .urlbarView-body-outer,
+#urlbarView-results .urlbarView-body-inner,
+#urlbarView-results .urlbarView-results,
+#urlbarView-results .urlbarView-results-container,
+#urlbarView-results .urlbarView-row,
+#urlbarView-results .urlbarView-row-inner,
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .urlbarView-body-outer,
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .urlbarView-body-inner,
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .urlbarView-results,
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .urlbarView-results-container,
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .urlbarView-row,
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .urlbarView-row-inner,
+.urlbarView-body-outer,
+.urlbarView-body-inner,
+.urlbarView-results,
+.urlbarView-results-container,
+.urlbarView-row {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+#urlbar-results .urlbarView-row:hover .urlbarView-row-inner,
+#urlbar-results .urlbarView-row[selected] .urlbarView-row-inner,
+#urlbar-results .urlbarView-row[aria-selected="true"] .urlbarView-row-inner,
+#urlbarView-results .urlbarView-row:hover .urlbarView-row-inner,
+#urlbarView-results .urlbarView-row[selected] .urlbarView-row-inner,
+#urlbarView-results .urlbarView-row[aria-selected="true"] .urlbarView-row-inner,
+.urlbarView-row:hover .urlbarView-row-inner,
+.urlbarView-row[selected] .urlbarView-row-inner,
+.urlbarView-row[aria-selected="true"] .urlbarView-row-inner {
+  background: var(--glass-popup-hover) !important;
+  background-color: var(--glass-popup-hover) !important;
+  color: #ffffff !important;
+  border-radius: 6px !important;
+}
+
+#urlbar-results .urlbarView-title,
+#urlbar-results .urlbarView-url,
+#urlbar-results .urlbarView-action,
+#urlbarView-results .urlbarView-title,
+#urlbarView-results .urlbarView-url,
+#urlbarView-results .urlbarView-action,
+.urlbarView-title,
+.urlbarView-url,
+.urlbarView-action {
+  color: var(--glass-text) !important;
+  font-weight: 700 !important;
+}
+
+#urlbar[popover-open],
+#urlbar[popover-open] .urlbarView,
+#urlbar[popover-open] .urlbarView-background,
+#urlbar[popover-open] .urlbarView-body-outer,
+#urlbar[popover-open] .urlbarView-body-inner,
+#urlbar[popover-open] .urlbarView-results,
+#urlbar-results,
+#urlbarView-results,
+#PopupAutoCompleteRichResult,
+panel[type="autocomplete-richlistbox"],
+panel[type="autocomplete-richlistbox"]>.autocomplete-richlistbox {
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background: rgba(16, 38, 63, 0.42) !important;
+  background-color: rgba(16, 38, 63, 0.42) !important;
+  background-image: none !important;
+}
+
+#urlbar {
+  --toolbar-field-background-color: transparent !important;
+  --toolbar-field-focus-background-color: transparent !important;
+  --urlbar-box-bgcolor: transparent !important;
+  --urlbar-box-focus-bgcolor: transparent !important;
+}
+
+#urlbar>#urlbar-background,
+#urlbar:is([focused], [open], [popover-open])>#urlbar-background,
+#urlbar[breakout][breakout-extend]>#urlbar-background {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.urlbar-background,
+#urlbar .urlbar-background {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
 }
