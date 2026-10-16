@@ -60,8 +60,8 @@
   }
 
   .open-customization-button {
-    --button-background-color-primary: #fff3 !important;
-    --button-background-color-primary-hover: #fff3 !important;
+    --button-background-color-primary: var(--semi-transparent) !important;
+    --button-background-color-primary-hover: var(--semi-transparent) !important;
   }
 
   .search-wrapper content-search-handoff-ui {
@@ -158,13 +158,13 @@
   .top-site-outer .tile .search-topsite,
   .top-site-outer .tile .icon-wrapper img,
   .top-site-outer .tile .icon img {
-    filter: grayscale(1) opacity(50%) !important;
+    filter: grayscale(1) opacity(55%) !important;
   }
 
   .top-site-outer .tile .icon-wrapper.letterfallback,
   .top-site-outer .tile .icon-wrapper.letter-fallback {
-    background-color: #fff3 !important;
-    filter: grayscale(1) opacity(50%) !important;
+    background-color: var(--semi-transparent) !important;
+    filter: grayscale(1) opacity(55%) !important;
   }
 
   .top-site-outer .tile .icon-wrapper.letterfallback::before,
@@ -173,4 +173,267 @@
   .top-site-outer .tile .search-topsite[data-fallback]::before {
     filter: grayscale(1) !important;
   }
+
+  .button-background {
+    background-color: var(--semi-transparent) !important;
+  }
+
+  .button-background:hover {
+    background-color: var(--glass-popup-hover) !important;
+  }
+
+}
+
+
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+  :root {
+    --glass-ink: #10263f !important;
+    --glass-gold: #9c6b1f !important;
+    --glass-text: #f4f7fb !important;
+    --glass-muted: #c8d2df !important;
+
+    --focus-outline-color: #9c6b1f !important;
+    --focus-outline: 2px solid #9c6b1f !important;
+    --newtab-focus-outline: color-mix(in srgb, #9c6b1f 32%, transparent) !important;
+    --newtab-focus-border: #9c6b1f !important;
+    --newtab-focus-border-selected: #9c6b1f !important;
+
+    --newtab-primary-action-background: #9c6b1f !important;
+    --newtab-primary-action-background-dimmed: color-mix(in srgb, #9c6b1f 28%, transparent) !important;
+    --newtab-button-background: color-mix(in srgb, #10263f 82%, transparent) !important;
+    --newtab-button-focus-background: color-mix(in srgb, #9c6b1f 22%, #10263f) !important;
+    --newtab-button-focus-border: #9c6b1f !important;
+    --newtab-button-hover-background: color-mix(in srgb, #9c6b1f 24%, #10263f) !important;
+    --newtab-button-active-background: color-mix(in srgb, #9c6b1f 40%, #10263f) !important;
+  }
+
+  .top-site-outer .context-menu-button {
+    color: var(--glass-text) !important;
+    background-color: rgba(16, 38, 63, 0.86) !important;
+    border: 1px solid rgba(156, 107, 31, 0.70) !important;
+    border-radius: 50% !important;
+    box-shadow: none !important;
+    outline: none !important;
+    transition: background-color 140ms ease, border-color 140ms ease, box-shadow 140ms ease !important;
+  }
+
+  .top-site-outer .context-menu-button:hover,
+  .top-site-outer .context-menu-button:active,
+  .top-site-outer .context-menu-button[aria-expanded="true"] {
+    color: #ffffff !important;
+    background-color: rgba(156, 107, 31, 0.34) !important;
+    border-color: #c99a43 !important;
+    box-shadow: 0 0 0 2px rgba(156, 107, 31, 0.20) !important;
+  }
+
+  .top-site-outer .context-menu-button:focus-visible,
+  .top-site-outer .context-menu-button[aria-expanded="true"]:focus {
+    outline: 2px solid #9c6b1f !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 3px rgba(156, 107, 31, 0.22) !important;
+  }
+
+  panel-list {
+    color-scheme: dark !important;
+    --panel-list-background-color: rgba(16, 38, 63, 0.94) !important;
+    --panel-list-text-color: #f4f7fb !important;
+    --panel-list-border-color: rgba(156, 107, 31, 0.74) !important;
+    --panel-list-border-radius: 12px !important;
+    --panel-list-box-shadow: 0 10px 28px rgba(0, 0, 0, 0.42) !important;
+
+    --button-background-color-menu-hover: rgba(156, 107, 31, 0.26) !important;
+    --button-text-color-menu-hover: #ffffff !important;
+    --button-background-color-menu-active: rgba(156, 107, 31, 0.42) !important;
+    --button-text-color-menu-active: #ffffff !important;
+    --focus-outline: 2px solid #9c6b1f !important;
+    --focus-outline-color: #9c6b1f !important;
+    --panel-separator-color: rgba(156, 107, 31, 0.35) !important;
+  }
+
+  .edit-topsites .modal,
+  .modal:has(.topsite-form) {
+    color-scheme: dark !important;
+    color: var(--glass-text) !important;
+    background: rgba(16, 38, 63, 0.91) !important;
+    background-color: rgba(16, 38, 63, 0.91) !important;
+    border: 1px solid rgba(156, 107, 31, 0.72) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.48) !important;
+    backdrop-filter: blur(14px) saturate(115%) !important;
+  }
+
+  .topsite-form {
+    color: var(--glass-text) !important;
+    --focus-outline-color: #9c6b1f !important;
+    --focus-outline: 2px solid #9c6b1f !important;
+    --button-background-color: rgba(255, 255, 255, 0.07) !important;
+    --button-background-color-hover: rgba(156, 107, 31, 0.25) !important;
+    --button-background-color-active: rgba(156, 107, 31, 0.40) !important;
+    --button-text-color: #f4f7fb !important;
+    --button-text-color-hover: #ffffff !important;
+    --button-border-color: rgba(156, 107, 31, 0.55) !important;
+    --button-border-color-hover: #c99a43 !important;
+  }
+
+  .topsite-form .section-title,
+  .topsite-form label,
+  .topsite-form .form-input-container,
+  .topsite-form .topsite-form-footer {
+    color: var(--glass-text) !important;
+  }
+
+  .topsite-form input:not([type="checkbox"]) {
+    color: var(--glass-text) !important;
+    background: rgba(16, 38, 63, 0.58) !important;
+    border: 1px solid rgba(156, 107, 31, 0.58) !important;
+    border-radius: 9px !important;
+    box-shadow: none !important;
+    outline: none !important;
+    caret-color: #d7ad5e !important;
+  }
+
+  .topsite-form input:not([type="checkbox"])::placeholder {
+    color: #c8d2df !important;
+    opacity: 0.85 !important;
+  }
+
+  .topsite-form input:not([type="checkbox"]):focus,
+  .topsite-form input:not([type="checkbox"]):focus-visible {
+    background: rgba(16, 38, 63, 0.78) !important;
+    border-color: #c99a43 !important;
+    outline: 2px solid #9c6b1f !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 1px rgba(156, 107, 31, 0.66),
+      0 0 0 4px rgba(156, 107, 31, 0.20) !important;
+  }
+
+  .topsite-form moz-button {
+    color: var(--glass-text) !important;
+    --focus-outline-color: #9c6b1f !important;
+    --focus-outline: 2px solid #9c6b1f !important;
+    --button-background-color: rgba(255, 255, 255, 0.07) !important;
+    --button-background-color-hover: rgba(156, 107, 31, 0.25) !important;
+    --button-background-color-active: rgba(156, 107, 31, 0.40) !important;
+    --button-text-color: #f4f7fb !important;
+    --button-text-color-hover: #ffffff !important;
+    --button-border-color: rgba(156, 107, 31, 0.58) !important;
+    --button-border-color-hover: #c99a43 !important;
+  }
+
+  .topsite-form moz-button[type="primary"] {
+    --button-background-color: #9c6b1f !important;
+    --button-background-color-hover: #b6822b !important;
+    --button-background-color-active: #805718 !important;
+    --button-text-color: #ffffff !important;
+    --button-text-color-hover: #ffffff !important;
+    --button-border-color: #9c6b1f !important;
+    --button-border-color-hover: #d7ad5e !important;
+  }
+
+  .topsite-form moz-button:focus-visible {
+    outline: 2px solid #9c6b1f !important;
+    outline-offset: 3px !important;
+    border-radius: 8px !important;
+  }
+}
+
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+  .modalOverlayOuter:has(.topsite-form) {
+    --panel-background: rgba(16, 38, 63, 0.50) !important;
+    --panel-background-color: rgba(16, 38, 63, 0.50) !important;
+    --panel-border-color: rgba(156, 107, 31, 0.72) !important;
+    background: rgba(16, 38, 63, 0.50) !important;
+    background-color: rgba(16, 38, 63, 0.50) !important;
+    background-image: none !important;
+    border: 1px solid rgba(156, 107, 31, 0.72) !important;
+    backdrop-filter: blur(14px) saturate(115%) !important;
+  }
+
+  .edit-topsites .modal:has(.topsite-form),
+  .modal:has(.topsite-form) {
+    background: rgba(16, 38, 63, 0.58) !important;
+    background-color: rgba(16, 38, 63, 0.58) !important;
+    background-image: none !important;
+    border-color: rgba(156, 107, 31, 0.72) !important;
+    backdrop-filter: blur(14px) saturate(115%) !important;
+  }
+
+  .topsite-form {
+    --link-color: #d7ad5e !important;
+    --link-color-hover: #f4d28a !important;
+    --link-color-active: #c99a43 !important;
+    --focus-outline-color: #9c6b1f !important;
+    --focus-outline: 2px solid #9c6b1f !important;
+  }
+
+  .topsite-form .enable-custom-image-input,
+  .topsite-form .enable-custom-image-input:link,
+  .topsite-form .enable-custom-image-input:visited {
+    color: #d7ad5e !important;
+    text-decoration-color: currentColor !important;
+  }
+
+  .topsite-form .enable-custom-image-input:hover {
+    color: #f4d28a !important;
+    text-decoration: none !important;
+  }
+
+  .topsite-form .enable-custom-image-input:active {
+    color: #c99a43 !important;
+  }
+
+  .topsite-form .enable-custom-image-input:focus,
+  .topsite-form .enable-custom-image-input:focus-visible {
+    color: #f4d28a !important;
+    outline: 2px solid #9c6b1f !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 3px rgba(156, 107, 31, 0.18) !important;
+    border-radius: 4px !important;
+  }
+
+  .topsite-form moz-button#topsites-form-cancel-button {
+    --focus-outline-color: #9c6b1f !important;
+    --focus-outline: 2px solid #9c6b1f !important;
+    --button-focus-outline-color: #9c6b1f !important;
+    --button-focus-outline: 2px solid #9c6b1f !important;
+    outline-color: #9c6b1f !important;
+  }
+
+  .topsite-form moz-button#topsites-form-cancel-button:focus,
+  .topsite-form moz-button#topsites-form-cancel-button:focus-visible {
+    outline: 2px solid #9c6b1f !important;
+    outline-color: #9c6b1f !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 3px rgba(156, 107, 31, 0.18) !important;
+  }
+
+  .topsite-form moz-button#topsites-form-cancel-button::part(button):focus,
+  .topsite-form moz-button#topsites-form-cancel-button::part(button):focus-visible {
+    outline: 2px solid #9c6b1f !important;
+    outline-color: #9c6b1f !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 3px rgba(156, 107, 31, 0.18) !important;
+  }
+}
+
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+  .topsite-form moz-button#topsites-form-cancel-button {
+    --focus-outline: 2px solid #9c6b1f !important;
+    --focus-outline-color: #9c6b1f !important;
+    --focus-outline-offset: 2px !important;
+  }
+
+  .topsite-form moz-button#topsites-form-cancel-button:focus::part(button),
+  .topsite-form moz-button#topsites-form-cancel-button:focus-visible::part(button),
+  .topsite-form moz-button#topsites-form-cancel-button:focus-within::part(button) {
+    outline: 2px solid #9c6b1f !important;
+    outline-color: #9c6b1f !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 3px rgba(156, 107, 31, 0.18) !important;
+  }
+
+  .button-background {
+    border-color: transparent !important;
+  }
+
 }
