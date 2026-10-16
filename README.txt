@@ -67,7 +67,8 @@ NOTE
 Firefox updates may change internal interface elements and require the CSS
 selectors to be adjusted. Keep a backup of the files before editing them.
 
-Preview
+PREVIEW
 -------
 
-(preview.png)
+![Translucent Firefox Theme Preview](preview.png)
+
