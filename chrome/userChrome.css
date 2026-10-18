@@ -898,7 +898,6 @@ panel[type="autocomplete-richlistbox"]>.autocomplete-richlistbox {
   background-image: none !important;
 }
 
-/* Native JavaScript alert(), confirm() and prompt() dialogs from websites. */
 .content-prompt-dialog > .dialogOverlay > .dialogBox {
   background: rgba(16, 38, 63, 0.88) !important;
   outline: 1px solid var(--glass-popup-border) !important;
@@ -917,7 +916,6 @@ panel[type="autocomplete-richlistbox"]>.autocomplete-richlistbox {
   border: 0 !important;
 }
 
-/* Style the privileged document rendered inside the prompt's dialog frame. */
 @-moz-document url("chrome://global/content/commonDialog.xhtml") {
   :root,
   #commonDialogWindow,
