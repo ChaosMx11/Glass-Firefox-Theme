@@ -897,3 +897,129 @@ panel[type="autocomplete-richlistbox"]>.autocomplete-richlistbox {
   background-color: transparent !important;
   background-image: none !important;
 }
+
+/* Native JavaScript alert(), confirm() and prompt() dialogs from websites. */
+.content-prompt-dialog > .dialogOverlay > .dialogBox {
+  background: rgba(16, 38, 63, 0.88) !important;
+  outline: 1px solid var(--glass-popup-border) !important;
+  border-radius: var(--glass-popup-radius) !important;
+  box-shadow: 0 10px 28px #0008 !important;
+  overflow: hidden !important;
+  backdrop-filter: blur(12px) saturate(120%) !important;
+}
+
+.content-prompt-dialog > .dialogOverlay[topmost="true"] {
+  background-color: rgba(4, 10, 18, 0.45) !important;
+}
+
+.content-prompt-dialog .dialogFrame {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+/* Style the privileged document rendered inside the prompt's dialog frame. */
+@-moz-document url("chrome://global/content/commonDialog.xhtml") {
+  :root,
+  #commonDialogWindow,
+  #commonDialog {
+    color-scheme: dark !important;
+    --in-content-page-background: rgba(16, 38, 63, 0.88) !important;
+    --in-content-page-color: #f4f7fb !important;
+    --in-content-text-color: #f4f7fb !important;
+    --in-content-button-text-color: #f4f7fb !important;
+    --in-content-button-text-color-hover: #ffffff !important;
+    --in-content-button-text-color-active: #ffffff !important;
+    --in-content-button-background: rgba(16, 38, 63, 0.38) !important;
+    --in-content-button-background-hover: rgba(156, 107, 31, 0.30) !important;
+    --in-content-button-background-active: rgba(156, 107, 31, 0.48) !important;
+    --in-content-primary-button-text-color: #ffffff !important;
+    --in-content-primary-button-text-color-hover: #ffffff !important;
+    --in-content-primary-button-text-color-active: #ffffff !important;
+    --in-content-primary-button-background: #9c6b1f !important;
+    --in-content-primary-button-background-hover: #b27d26 !important;
+    --in-content-primary-button-background-active: #805817 !important;
+    --in-content-focus-outline-color: #9c6b1f !important;
+    background-color: transparent !important;
+    color: #f4f7fb !important;
+  }
+
+  #commonDialog {
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background: var(--in-content-page-background) !important;
+    background-image: none !important;
+    border: 1px solid rgba(156, 107, 31, 0.48) !important;
+    border-radius: 10px !important;
+    color: var(--in-content-page-color) !important;
+  }
+
+  #infoTitle,
+  #infoBody,
+  label,
+  description {
+    color: #f4f7fb !important;
+  }
+
+  #iconContainer,
+  #infoIcon {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  #dialogGrid,
+  #iconContainer {
+    background: var(--in-content-page-background) !important;
+    background-color: var(--in-content-page-background) !important;
+    background-image: none !important;
+  }
+
+  .titleIcon {
+    background-color: var(--in-content-page-background) !important;
+    background-blend-mode: screen !important;
+  }
+
+  button {
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background-image: none !important;
+    background-color: rgba(16, 38, 63, 0.60) !important;
+    color: #f4f7fb !important;
+    border: 1px solid rgba(156, 107, 31, 0.58) !important;
+    border-radius: 999px !important;
+    box-shadow: none !important;
+  }
+
+  button[dlgtype="accept"],
+  button[default="true"] {
+    background-color: #9c6b1f !important;
+    border-color: #9c6b1f !important;
+    color: #ffffff !important;
+  }
+
+  button:hover {
+    background-color: rgba(156, 107, 31, 0.30) !important;
+    color: #ffffff !important;
+  }
+
+  button[dlgtype="accept"]:hover,
+  button[default="true"]:hover {
+    background-color: #b27d26 !important;
+  }
+
+  button:focus-visible {
+    outline: 2px solid rgba(156, 107, 31, 0.78) !important;
+    outline-offset: 2px !important;
+  }
+
+  input,
+  textbox {
+    background: rgba(7, 17, 30, 0.72) !important;
+    border: 1px solid rgba(156, 107, 31, 0.58) !important;
+    border-radius: 7px !important;
+    color: #f4f7fb !important;
+    caret-color: #f4f7fb !important;
+  }
+}

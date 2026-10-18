@@ -9,7 +9,7 @@ FILES
 
 userChrome.css
   Styles the Firefox interface, including toolbars, tabs, the address bar,
-  buttons, menus, and panels.
+  buttons, menus, panels, and website-triggered JavaScript dialogs.
 
 userContent.css
   Styles backgrounds and selected elements on the Firefox New Tab and Home
